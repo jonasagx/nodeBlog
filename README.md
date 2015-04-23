@@ -1,7 +1,6 @@
 # My Blob
 
 Essa aplicação depende que jasmine esteja na máquina, para uso global. Isso pode ser garantido fazendo:
-
     $ npm install -g jasmine
 
 Por conta da qualidade da minha conexão a bibliotecas usadas não estão incluídas, para fazê-lo:
