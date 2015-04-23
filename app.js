@@ -4,8 +4,8 @@
  */
 
 var express = require('express'),
-  routes = require('./routes'),
-  api = require('./routes/api');
+    routes = require('./routes'),
+    api = require('./routes/api');
 
 var app = module.exports = express.createServer();
 
@@ -23,15 +23,15 @@ app.configure(function(){
   app.use(app.router);
 });
 
-
 app.configure('development', function(){
   app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 });
 
+/*
 app.configure('production', function(){
   app.use(express.errorHandler());
 });
-
+*/
 // Routes
 
 app.get('/', routes.index);
@@ -41,18 +41,18 @@ app.get('/partials/:name', routes.partials);
 
 app.get('/api/posts', api.posts);
 app.get('/api/sameTag/:tag', api.sameTag);
-app.get('/api/tags/', api.listTags);
+app.get('/api/listTags/', api.tags);
 
 app.get('/api/post/:id', api.post);
 app.post('/api/post', api.addPost);
 app.put('/api/post/:id', api.editPost);
 app.delete('/api/post/:id', api.deletePost);
 
-// redirect all others to the index (HTML5 history)
+// redirect all others to the index
 app.get('*', routes.index);
 
 // Start server
 
 app.listen(3000, function(){
-  console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
+  console.log("My blog server listens on port %d in %s mode", app.address().port, app.settings.env);
 });

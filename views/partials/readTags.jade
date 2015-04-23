@@ -1,5 +1,5 @@
-section
-  h3 {{post.title}}
-  div {{post.text}}
-  h4 tag:
-  div {{post.tag}}
+p There are {{tags.length}} tags
+div(ng-repeat='tag in tags')
+  h3 
+    {{tag}}
+    a(href='/sameTag/{{tag}}') ...

@@ -1,6 +1,5 @@
 'use strict';
 
-// Declare app level module which depends on filters, and services
 angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives']).
   config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider.
@@ -9,8 +8,8 @@ angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives'])
         controller: IndexCtrl
       }).
       when('/sameTag/:tag', {
-        templateUrl: 'partials/index',
-        controller: IndexCtrl
+        templateUrl: 'partials/sameTag',
+        controller: TagPostCtrl
       }).
       when('/addPost', {
         templateUrl: 'partials/addPost',
@@ -19,6 +18,10 @@ angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives'])
       when('/readPost/:id', {
         templateUrl: 'partials/readPost',
         controller: ReadPostCtrl
+      }).
+      when('/readTags', {
+        templateUrl: 'partials/readTags',
+        controller: ReadTagsCtrl
       }).
       when('/editPost/:id', {
         templateUrl: 'partials/editPost',

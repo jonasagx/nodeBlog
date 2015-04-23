@@ -9,6 +9,13 @@ function IndexCtrl($scope, $http) {
     });
 }
 
+function ReadTagsCtrl($scope, $http) {
+  $http.get('/api/listTags/').
+    success(function(data, status, headers, config) {
+      $scope.tags = data.tags;
+    });
+}
+
 function AddPostCtrl($scope, $http, $location) {
   $scope.form = {};
   $scope.submitPost = function () {
@@ -22,7 +29,7 @@ function AddPostCtrl($scope, $http, $location) {
 function TagPostCtrl($scope, $http, $routeParams) {
   $http.get('/api/sameTag/' + $routeParams.tag).
     success(function(data) {
-      $scope.post = data.post;
+      $scope.posts = data.posts;
     });
 }
 
