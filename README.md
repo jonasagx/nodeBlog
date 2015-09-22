@@ -1,16 +1,20 @@
 # My Blob
 
 Essa aplicação depende que jasmine esteja na máquina, para uso global. Isso pode ser garantido fazendo:
-    $ npm install -g jasmine
+
+´$ npm install -g jasmine´
 
 Por conta da qualidade da minha conexão a bibliotecas usadas não estão incluídas, para fazê-lo:
-	$ npm install
+	
+´$ npm install´
 
 Para levantar o servidor faça:
-	$ npm start
+
+´$ npm start´
 
 Para executar os testes faça:
-	$ npm test
+
+´$ npm test´
 
 Os testes foram feitos sobre a api usando jasmine, e uma biblioteca que cria mocks para testes de requisição/resposta chamada dupertest. As descrições dos testes estão nas strings dentro dos describes.
 
